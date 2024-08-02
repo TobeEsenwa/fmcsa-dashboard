@@ -31,7 +31,6 @@ const StyledTableContainer = styled(TableContainer)(({theme}) => ({
 	'&::-webkit-scrollbar': {
 		display: 'none',
 	},
-	'-ms-overflow-style': 'none',  /* IE and Edge */
 	'scrollbar-width': 'none',  /* Firefox */
 }));
 
@@ -73,7 +72,6 @@ const StyledTableBody = styled(TableBody)(({theme}) => ({
 	'&::-webkit-scrollbar': {
 		display: 'none',
 	},
-	'-ms-overflow-style': 'none',  /* IE and Edge */
 	'scrollbar-width': 'none',  /* Firefox */
 }));
 
