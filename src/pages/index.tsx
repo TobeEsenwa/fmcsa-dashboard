@@ -20,7 +20,7 @@ const Home: React.FC<HomeProps> = () => {
 	const tableData = useTableData('/FMCSA_records.csv');
 
 	const buttonStyle =
-		theme === 'light' ? 'hover:bg-gray-300 text-black' : 'dark:hover:bg-gray-700 text-white'
+		theme === 'light' ? 'hover:bg-gray-300 background-black' : 'dark:hover:bg-gray-700 text-white'
 
 	return (
 		<>
