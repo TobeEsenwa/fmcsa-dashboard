@@ -1,13 +1,15 @@
 import {useRouter} from 'next/router';
 import {useTableData} from '@/hooks/useTableData';
-import {ArrowLeftIcon, PhoneIcon, MapPinIcon, TruckIcon, IdentificationIcon} from '@heroicons/react/24/outline';
+import {ArrowLeftIcon, MapPinIcon, TruckIcon, IdentificationIcon} from '@heroicons/react/24/outline';
 import {Skeleton} from '@mui/material';
 import React from 'react';
+import {useTheme} from 'next-themes';
 
 const DetailsPage: React.FC = () => {
 	const router = useRouter();
 	const {id} = router.query;
 	const tableData = useTableData('/FMCSA_records.csv');
+	const { theme } = useTheme();
 
 	const data = tableData?.data.find(item => item['id'] === id);
 
@@ -16,41 +18,73 @@ const DetailsPage: React.FC = () => {
 			<div className="bg-background">
 				<div className="mx-auto px-4 sm:px-6 lg:px-8 py-12">
 					<Skeleton
-						variant="text"
-						height={60}
+						variant="rectangular"
+						style={{
+							backgroundColor: `${theme === 'light' ? '#c5c1c1': '#343a40'}`,
+							opacity: 0.5,
+							height: '60px',
+						}}
 						animation="pulse"
 					/>
 
 					<Skeleton
-						variant="text"
-						height={60}
+						variant="rectangular"
+						style={{
+							backgroundColor: `${theme === 'light' ? '#c5c1c1': '#343a40'}`,
+							opacity: 0.5,
+							height: '60px',
+						}}
 						animation="pulse"
 					/>
 
 					<div className="py-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 						<Skeleton
-							variant="text"
-							height={160}
+							variant="rectangular"
+							style={{
+								margin: "1px",
+								display: 'flex',
+								height: '180px',
+								backgroundColor: `${theme === 'light' ? '#c5c1c1': '#343a40'}`,
+								opacity: 0.5
+							}}
 							animation="pulse"
 						/>
 
 						<Skeleton
-							variant="text"
-							height={160}
+							variant="rectangular"
+							style={{
+								margin: "1px",
+								display: 'flex',
+								height: '180px',
+								backgroundColor: `${theme === 'light' ? '#c5c1c1': '#343a40'}`,
+								opacity: 0.5
+							}}
 							animation="pulse"
 						/>
 
 						<Skeleton
-							variant="text"
-							height={160}
+							variant="rectangular"
+							style={{
+								margin: "1px",
+								display: 'flex',
+								height: '180px',
+								backgroundColor: `${theme === 'light' ? '#c5c1c1': '#343a40'}`,
+								opacity: 0.5
+							}}
 							animation="pulse"
 						/>
 					</div>
 
 					<div>
 						<Skeleton
-							variant="text"
-							height={360}
+							variant="rectangular"
+							style={{
+								margin: "1px",
+								display: 'flex',
+								height: '300px',
+								backgroundColor: `${theme === 'light' ? '#c5c1c1': '#343a40'}`,
+								opacity: 0.5
+							}}
 							animation="pulse"
 						/>
 					</div>

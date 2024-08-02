@@ -5,6 +5,7 @@ import {Container, Box, IconButton, Tooltip} from '@mui/material';
 import {CgInfo} from 'react-icons/cg';
 import {useTheme} from 'next-themes';
 import {useTableData} from '@/hooks/useTableData';
+import React from 'react';
 
 interface TableData {
 	columns: string[];
@@ -16,7 +17,7 @@ interface HomeProps {
 }
 
 const Home: React.FC<HomeProps> = () => {
-	const { theme, setTheme } = useTheme();
+	const { theme } = useTheme();
 	const tableData = useTableData('/FMCSA_records.csv');
 
 	const buttonStyle =
