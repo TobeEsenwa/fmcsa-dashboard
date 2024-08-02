@@ -58,6 +58,7 @@ const Home: React.FC<HomeProps> = () => {
 						data={tableData?.data || []}
 						columns={tableData?.columns || []}
 						itemsPerPage={100}
+						themeColor={theme}
 					/>
 				</Box>
 			</Container>

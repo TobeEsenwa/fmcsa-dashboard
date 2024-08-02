@@ -20,6 +20,7 @@ interface TableProps {
 	data: any[];
 	columns: string[];
 	itemsPerPage: number;
+	themeColor?: string;
 }
 
 const StyledTableContainer = styled(TableContainer)(({theme}) => ({
@@ -91,7 +92,7 @@ const formatDateTime = (dateString: string) => {
 	);
 };
 
-const FMCSATable = ({data, columns, itemsPerPage}: TableProps) => {
+const FMCSATable = ({data, columns, itemsPerPage, themeColor}: TableProps) => {
 	const theme = useTheme();
 	const [page, setPage] = useState(0);
 	const [rowsPerPage, setRowsPerPage] = useState(itemsPerPage || 5);
@@ -166,7 +167,9 @@ const FMCSATable = ({data, columns, itemsPerPage}: TableProps) => {
 					style={{
 						margin: "1px",
 						display: 'flex',
-						height: '500px'
+						height: '500px',
+						backgroundColor: `${themeColor === 'light' ? '#c5c1c1': '#343a40'}`,
+						opacity: 0.5
 					}}
 					variant="rectangular"
 					animation="pulse"
