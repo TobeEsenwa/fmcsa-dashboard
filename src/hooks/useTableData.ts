@@ -13,7 +13,6 @@ const convertCsvToTableData = (csvString: string): TableData => {
 		...row,
 		id: `${index + 1}`,
 	}));
-	console.log(dataWithIds)
 
 	return {
 		columns: [
